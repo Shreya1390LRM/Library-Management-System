@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    /* Image Location */
+    background-image: url("./Library.jpg");
+ 
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    /* Font Colour */
+    color:white;
+}
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 8%;
+  bottom: 10%;
+  left: 13%;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgba(155, 43, 43, 0.05), 0 2px 10px 0 rgba(208, 64, 64, 0.05);
+  width: 240px;
+  z-index: 600;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; 
+  background-color: rgb(3, 33, 37);
+}
+.container-fluid{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; 
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+  height: 50px;
+  width: 50px;
+  background-color:grey;
+}
+.lms{
+  margin-top: -3%;
+}
+a{
+  margin-top: -1%;
+}
+
+  .btn{
+    margin: 8px;
+    border-radius: -8.625rem;
+  }
+ 
+</style>
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" >
+<link rel="stylesheet" type="text/css" href="fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.css">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" ></script>
+<body>
+  
+<header>
+  
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-black">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4 "style="background-color:black;margin-top: 2.5rem!important;">
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+          <i class="fas fa fa-user fa-fw me-3"></i><span>ADMIN</span>
+        </a>
+           
+
+<button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  <i class="fas fa fa-plus fa-fw me-3"></i><span>ADD BOOK</span>
+</button>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add Book</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Book Name:</label>
+            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Detail:</label>
+            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Author:</label>
+            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Publication:</label>
+            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+          </div>
+
+          <h6>Type</h6>
+           <input type="checkbox" id="IT" name="IT" value="Bike">
+            <label for="IT">Design</label><br>
+            <input type="checkbox" id="CIVIL" name="CIVIL" value="Car">
+            <label for="CIVIL"> Coding</label><br>
+            <input type="checkbox" id="EC" name="EC" value="Boat">
+            <label for="EC">Backend</label><br><br>
+            <div class="mb-3">
+              <label for="exampleInputName" class="form-label">Price:</label>
+              <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputName" class="form-label">Quantity:</label>
+              <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+            </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add Book</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+  <i class="fas fa fa-file fa-fw me-3"></i><span>BOOK REPORT</span></a>
+</button>
+
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Book Record</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Book Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Qnt</th>
+              <th scope="col">Available</th>
+              <th scope="col">View</th> 
+              <!-- gives book detail -->
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Computer games</th>
+              <td>765</td>
+              <td>23</td>
+              <td>16</td>
+              <td>view</td>
+              <td>Delete</td>
+            </tr>
+            <tr>
+              <th scope="row">Multimedia systems</th>
+              <td>234</td>
+              <td>15</td>
+              <td>164</td>
+              <td>view</td>
+              <td>Delete</td>
+            </tr>
+            <tr>
+              <th scope="row">Database systems</th>
+              <td>76</td>
+              <td>3</td>
+              <td>2</td>
+              <td>view</td>
+              <td>Delete</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+  <i class="fas fa fa-paper-plane fa-fw me-3"></i><span>BOOK REQUEST</span>
+</button>
+
+<div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Book Recquest</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Person Name</th>
+              <th scope="col">Person type</th>
+              <th scope="col">Book Name</th>
+              <th scope="col">Days</th>
+              <th scope="col">Approve/Reject</th> 
+              <!-- gives book detail -->
+            </tr>
+          </thead>
+        </table>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
+  <i class="far fa fa-plus fa-fw me-3"></i><span>ADD STUDENT</span>
+</button>
+<div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add student</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">student Name:</label>
+            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Password:</label>
+            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Email:</label>
+            <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Choose Student type
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Temporary</a></li>
+              <li><a class="dropdown-item" href="#">permanant</a></li>
+              <li><a class="dropdown-item" href="#">Teacher</a></li>
+            </ul>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add student</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop5">
+  <i class="far fa fa-file-code fa-fw me-3"></i><span>STUDENT REPORT</span>
+</button>
+<div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">student Record</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Type</th>
+              <th scope="col"><i class="fa fa-eye" aria-hidden="true"></i></th> 
+              <!-- gives book detail -->
+              <th scope="col"><i class="fa fa-trash" aria-hidden="true"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">shreya</th>
+              <td>sskatare1390@gmail.com</td>
+              <td>permanant</td>
+              <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+              <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+            </tr>
+            <tr>
+              <th scope="row">pramod</th>
+              <td>pramodkatare121@gmail.com</td>
+              <td>permanant</td>
+              <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+              <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+            </tr>
+            <tr>
+              <th scope="row">vishal</th>
+              <td>vishal2411@gmail.com</td>
+              <td>Temporary</td>
+              <td><i class="fa fa-eye" aria-hidden="true"></i></td>
+              <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+              
+<button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop6">
+  <i class="fas far fa-pen-alt fa-fw me-3"></i><span>ISSUE BOOK</span>
+</button>
+<div class="modal fade" id="staticBackdrop6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">ISSUE BOOK</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Choose Book:
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Computer games</a></li>
+              <li><a class="dropdown-item" href="#">Multimedia systems</a></li>
+              <li><a class="dropdown-item" href="#">Database systems</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Choose Student:
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">shreya</a></li>
+              <li><a class="dropdown-item" href="#">pramod</a></li>
+              <li><a class="dropdown-item" href="#">vishal</a></li>
+            </ul>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">From date:</label>
+            <input type="date" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">To date:</label>
+            <input type="date" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+          </div>
+          
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop7">
+  <i class="fas fa fa-sticky-note fa-fw me-3"></i><span>ISSUE REPORT</span>
+</button>
+
+<div class="modal fade modal-dialog modal-lg" id="staticBackdrop7" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" 
+aria-labelledby="staticBackdropLabel" aria-hidden="true"style="margin-top:-200%;margin-left:150%">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">student Record</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Issue Name</th>
+              <th scope="col">Book Name</th>
+              <th scope="col">Issue date</th>
+              <th scope="col">Return Date</th>
+              <th scope="col">fine</th>
+              <th scope="col">Issue type</th>
+               </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col">shreya</th>
+              <th scope="col">Computer games</th>
+              <th scope="col">30/03/2022</th>
+              <th scope="col">02/04/2022</th>
+              <th scope="col">800</th>
+              <th scope="col">student</th>        </tr>
+            <tr>
+              <th scope="col">pramod</th>
+              <th scope="col">Multimedia systems</th>
+              <th scope="col">01/04/2021</th>
+              <th scope="col">06/04/2021</th>
+              <th scope="col">0</th>
+              <th scope="col">student</th>
+            </tr>
+            <tr>
+              <th scope="col">vishal</th>
+              <th scope="col">Database systems</th>
+              <th scope="col">03/09/2022</th>
+              <th scope="col">08/09/2022</th>
+              <th scope="col">0</th>
+              <th scope="col">Teacher</th>    </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+              
+     
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+  <i class="fas fa fa-sign-out fa-fw me-3"></i><span>LOGOUT</span>
+</button>
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">You have been logged out successfully</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+             
+             
+       
+
+      </div>
+    </div>
+    
+  </nav>
+    </div>
+    </div>
+</div>
+<iframe width="560" height="315" style="margin-left: 50%;margin-top: 25%;" src="https://www.youtube.com/embed/93weqsWLhbQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+
+</html>
